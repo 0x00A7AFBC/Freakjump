@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://rg7i1b718m0e"]
+
+[ext_resource type="Texture2D" uid="uid://6j6f1f13ewkx" path="res://recources/background-image.jpeg" id="1_4b7qw"]
+[ext_resource type="Texture2D" uid="uid://cxleyh4x507qc" path="res://icon.svg" id="2_2kmvi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8qkb7"]
+size = Vector2(31.8136, 198.4)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e08e2"]
+size = Vector2(517, 85)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_4b7qw")
+stretch_mode = 1
+
+[node name="GameRoot" type="Node2D" parent="."]
+
+[node name="Player" type="Sprite2D" parent="GameRoot"]
+position = Vector2(546, 334)
+texture = ExtResource("2_2kmvi")
+
+[node name="Area2D2" type="Area2D" parent="GameRoot/Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameRoot/Player/Area2D2"]
+scale = Vector2(4.02344, 0.625)
+shape = SubResource("RectangleShape2D_8qkb7")
+
+[node name="Platforms" type="Node" parent="GameRoot"]
+
+[node name="Platform" type="Sprite2D" parent="GameRoot/Platforms"]
+position = Vector2(550, 522)
+scale = Vector2(4.02344, 0.625)
+texture = ExtResource("2_2kmvi")
+
+[node name="Area2D" type="Area2D" parent="GameRoot/Platforms/Platform"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameRoot/Platforms/Platform/Area2D"]
+position = Vector2(0.24855, -1.59999)
+scale = Vector2(0.248544, 1.6)
+shape = SubResource("RectangleShape2D_e08e2")
