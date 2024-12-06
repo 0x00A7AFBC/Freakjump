@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://rg7i1b718m0e"]
+[gd_scene load_steps=7 format=3 uid="uid://rg7i1b718m0e"]
 
 [ext_resource type="Texture2D" uid="uid://6j6f1f13ewkx" path="res://recources/background-image.jpeg" id="1_4b7qw"]
 [ext_resource type="Texture2D" uid="uid://cxleyh4x507qc" path="res://icon.svg" id="2_2kmvi"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="3_hyy2l"]
+[ext_resource type="Script" path="res://scripts/platform.gd" id="4_slpst"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8qkb7"]
 size = Vector2(31.8136, 198.4)
@@ -32,6 +34,7 @@ stretch_mode = 1
 [node name="Player" type="Sprite2D" parent="GameRoot"]
 position = Vector2(546, 334)
 texture = ExtResource("2_2kmvi")
+script = ExtResource("3_hyy2l")
 
 [node name="Area2D2" type="Area2D" parent="GameRoot/Player"]
 
@@ -45,6 +48,7 @@ shape = SubResource("RectangleShape2D_8qkb7")
 position = Vector2(550, 522)
 scale = Vector2(4.02344, 0.625)
 texture = ExtResource("2_2kmvi")
+script = ExtResource("4_slpst")
 
 [node name="Area2D" type="Area2D" parent="GameRoot/Platforms/Platform"]
 
